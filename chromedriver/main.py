@@ -20,15 +20,21 @@ options = webdriver.ChromeOptions()
 # Для примера случайный выбор из списка user_agent_list
 #options.add_argument(f"user-agent={random.choice(user_agent_list)}")
 
-#Для примера user-agent из библиотеки fake-useragent
+# Для примера user-agent из библиотеки fake-useragent
 options.add_argument(f'user-agent={useragent.random}')
+
+# Подключение proxy
+options.add_argument('--proxy-server=45.14.173.184:8000')
 
 driver = webdriver.Chrome(executable_path=r"D:\Dev\PypySelenium\chromedriver\chromedriver.exe",
                           options=options)
 
 try:
-    driver.get(url="https://www.whatsmyua.info/")
+    # driver.get(url="https://www.whatsmyua.info/")
+    # time.sleep(5)
+    driver.get(url='https://2ip.ru/')
     time.sleep(5)
+
 except Exception as ex:
     print(ex)
 finally:
