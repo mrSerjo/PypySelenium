@@ -1,9 +1,8 @@
 # from selenium import webdriver
 from seleniumwire import webdriver
 import time
-import random
 from fake_useragent import UserAgent
-from proxy_auth_data import login, password
+from chromedriver.proxy_auth_data import login, password
 
 
 user_agent_list = [
